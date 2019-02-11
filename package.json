@@ -4,7 +4,8 @@
   "description": "An API For Manipulating Images",
   "main": "src/index.js",
   "scripts": {
-    "test": "eslint ./"
+    "test": "eslint ./",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
