@@ -1,0 +1,25 @@
+{
+  "name": "image-gen-api",
+  "version": "0.1.0",
+  "description": "An API For Manipulating Images",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "eslint ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionadev/image-gen-api.git"
+  },
+  "keywords": [
+    "image",
+    "gen",
+    "api",
+    "iona"
+  ],
+  "author": "Piyush Bhangale",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ionadev/image-gen-api/issues"
+  },
+  "homepage": "https://github.com/ionadev/image-gen-api#readme"
+}
