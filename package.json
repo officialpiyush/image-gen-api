@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/ionadev/image-gen-api/issues"
   },
-  "homepage": "https://github.com/ionadev/image-gen-api#readme"
+  "homepage": "https://github.com/ionadev/image-gen-api#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "canvas": "^2.3.1",
+    "node-superfetch": "^0.1.9",
+    "cors": "^2.8.5",
+    "body-parser": "^1.18.3"
+  }
 }
