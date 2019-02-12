@@ -25,4 +25,6 @@ app.get('/image/achievement', async (req, res) => {
     return status(true, so, res);
 });
 
-app.listen('3000'); 
+app.listen('3000', () => {
+    console.log("Connected")
+}); 
