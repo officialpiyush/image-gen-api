@@ -15,6 +15,7 @@
 <a href="https://travis-ci.com/ionadev/image-gen-api">
 <img src="https://img.shields.io/travis/com/ionadev/image-gen-api.svg?style=for-the-badge">
 </a>
+<br>
 <a href="https://github.com/ionadev/image-gen-api">
 <img src="https://img.shields.io/github/languages/top/ionadev/image-gen-api.svg?style=for-the-badge">
 </a>
