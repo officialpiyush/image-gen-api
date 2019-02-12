@@ -22,4 +22,6 @@ app.get('/image/achievement', async (req, res) => {
     if(!so) return status(false, 'Text More Than 50 Chars!', res);
     
     return status(true, so, res);
-})
+});
+
+app.listen('3000'); 
