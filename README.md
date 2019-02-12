@@ -15,6 +15,16 @@
 <a href="https://travis-ci.com/ionadev/image-gen-api">
 <img src="https://img.shields.io/travis/com/ionadev/image-gen-api.svg?style=for-the-badge">
 </a>
+<a href="https://github.com/ionadev/image-gen-api">
+<img src="https://img.shields.io/github/languages/top/ionadev/image-gen-api.svg?style=for-the-badge">
+</a>
+<a href="https://github.com/ionadev/image-gen-api/issues">
+<img src="https://img.shields.io/github/issues/ionadev/image-gen-api.svg?style=for-the-badge">
+</a>
+<a href="https://github.com/ionadev/image-gen-api/pulls">
+<img src="https://img.shields.io/github/issues-pr/ionadev/image-gen-api.svg?style=for-the-badge">
+</a>
+
 </div>
 
 ---
