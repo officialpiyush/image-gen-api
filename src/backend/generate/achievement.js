@@ -27,5 +27,5 @@ module.exports = async function AchievementEndpoint(text) {
     ctx.fillStyle = "#ffffff";
     ctx.fillText(shortenText(ctx, text, 230), 60, 60);
 
-    return canvas.toBuffer();
+    return canvas.toBuffer()
 }
