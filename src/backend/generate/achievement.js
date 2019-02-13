@@ -22,7 +22,7 @@ module.exports = async function AchievementEndpoint(text) {
     const ctx = await canvas.getContext('2d');  
     ctx.drawImage(base, 0, 0);
     ctx.font = "17px Minecraftia";
-    ctx.fillStyle = "#ffff00";
+    ctx.fillStyle = "#ffff00";  
     ctx.fillText('Achievement Get!', 60, 40);
     ctx.fillStyle = "#ffffff";
     ctx.fillText(shortenText(ctx, text, 230), 60, 60);
