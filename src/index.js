@@ -16,6 +16,7 @@ const ApprovedEndpoint = require('./backend/generate/approved');
 
 /* Functions */
 function status(type, msg, res) {
+    if(type === false) res.status(400);
     return res.json({sucess: type, message: msg})
 }
 
@@ -40,6 +41,9 @@ app.get('/image/approved', async (req, res) => {
     if(!req.body.url) return status(false, 'No URL Provided', res);
     let check = await isImage(req.body.url);
     if(!check) return status(false, 'The Image Isnt Of The PNG Type.');
+    let result = await ApprovedEndpoint(req.body.url);
+
+    return status(result[0], result[1], res)
 
 })
 
