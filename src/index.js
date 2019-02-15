@@ -13,6 +13,8 @@ app.use(bodyParser.json());
 /* TODO- V2 Class Based Endpoints */ // eslint-disable-line
 const AchievementEndpoint = require('./backend/generate/achievement');
 const ApprovedEndpoint = require('./backend/generate/approved');
+const ContrastEndpoint = require('./backend/generate/contrast');
+const FrameEndpoint = require('./backend/generate/frame');
 
 /* Functions */
 function status(type, msg, res) {
@@ -44,9 +46,26 @@ app.get('/image/approved', async (req, res) => {
     let result = await ApprovedEndpoint(req.body.url);
 
     return status(result[0], result[1], res)
+});
 
-})
+app.get('/image/contrast', async(req, res) => {
+    if(!req.body.url) return status(false, 'No URL Provided', res);
+    let check = await isImage(req.body.url);
+    if(!check) return status(false, 'The Image Isnt Of The PNG Type.');
+    let result = await ContrastEndpoint(req.body.url);
 
-app.listen(process.env.port || '3000', () => { //eslint-disable-line
+    return status(result[0], result[1], res);
+});
+
+app.get('/image/frame', async (req, res) => {
+    if(!req.body.url) return status(false, 'No URL Provided', res);
+    let check = await isImage(req.body.url);
+    if(!check) return status(false, 'The Image Isnt Of The PNG Type.');
+    let result = await FrameEndpoint(req.body.url);
+
+    return status(result[0], result[1], res);
+});
+
+app.listen(process.env.port || '3000', () => { 
     console.log("[CONNECTION] Sucessfully Connected.")
 }); 
