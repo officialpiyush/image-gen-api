@@ -17,9 +17,10 @@ module.exports = async function FrameEndpoint(image) {
         ctx.drawImage(data, 0, 0);
         ctx.drawImage(base, 0, 0, data.width, data.height);
         const resimage = canvas.toBuffer();
-        if (Buffer.byteLength(attachment) > 8e+6) return [
+        if (Buffer.byteLength(resimage) > 8e+6) return [
             false,
-            'Resulting image was above 8 MB.'];
+            'Resulting image was above 8 MB.'
+        ];
 
         return [
             true,

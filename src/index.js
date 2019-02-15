@@ -19,13 +19,15 @@ const FrameEndpoint = require('./backend/generate/frame');
 /* Functions */
 function status(type, msg, res) {
     if(type === false) res.status(400);
+
     return res.json({sucess: type, message: msg})
 }
 
 function isImage(link) {
     let type = link.substring(link.lastIndexOf('.') + 1)
-    let isImage = /(png)/gi.test(type);
-    if(!isImage) return false;
+    let isPNG = /(png)/gi.test(type); //eslint-disable-line
+    if(!isPNG) return false;
+
     return true
 }
 
@@ -66,6 +68,6 @@ app.get('/image/frame', async (req, res) => {
     return status(result[0], result[1], res);
 });
 
-app.listen(process.env.port || '3000', () => { 
+app.listen(process.env.port || '3000', () => { //eslint-disable-line
     console.log("[CONNECTION] Sucessfully Connected.")
 }); 
