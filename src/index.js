@@ -15,6 +15,8 @@ const AchievementEndpoint = require('./backend/generate/achievement');
 const ApprovedEndpoint = require('./backend/generate/approved');
 const ContrastEndpoint = require('./backend/generate/contrast');
 const FrameEndpoint = require('./backend/generate/frame');
+const InvertEndpoint = require('./backend/generate/invert');
+const SepiatEndpoint = require('./backend/generate/sepia');
 
 /* Functions */
 function status(type, msg, res) {
@@ -64,6 +66,24 @@ app.get('/image/frame', async (req, res) => {
     let check = await isImage(req.body.url);
     if(!check) return status(false, 'The Image Isnt Of The PNG Type.');
     let result = await FrameEndpoint(req.body.url);
+
+    return status(result[0], result[1], res);
+});
+
+app.get('/image/invert', async (req, res) => {
+    if(!req.body.url) return status(false, 'No URL Provided', res);
+    let check = await isImage(req.body.url);
+    if(!check) return status(false, 'The Image Isnt Of The PNG Type.');
+    let result = await InvertEndpoint(req.body.url);
+
+    return status(result[0], result[1], res);
+});
+
+app.get('/image/sepia', async (req, res) => {
+    if(!req.body.url) return status(false, 'No URL Provided', res);
+    let check = await isImage(req.body.url);
+    if(!check) return status(false, 'The Image Isnt Of The PNG Type.');
+    let result = await SepiatEndpoint(req.body.url);
 
     return status(result[0], result[1], res);
 });
