@@ -13,7 +13,7 @@ module.exports = async function ContrastEndpoint(image) {
     try {
         const {
             body
-        } = await request(image);
+        } = await request.get(image);
         const data = await loadImage(body);
         const canvas = createCanvas(data.width, data.height);
         const ctx = canvas.getContext('2d');
