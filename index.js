@@ -101,6 +101,7 @@ app.get('/image/rejected', async(req, res) => {
         return status(result[0], result[1], res);
         });
 
+/*eslint eol-last: ["error", "always"]*/
 app.listen(process.env.port || '3000', () => { //eslint-disable-line
     console.log("[CONNECTION] Sucessfully Connected.")
-}); 
+})\n; 
