@@ -17,6 +17,7 @@ const ContrastEndpoint = require('./backend/generate/contrast');
 const FrameEndpoint = require('./backend/generate/frame');
 const InvertEndpoint = require('./backend/generate/invert');
 const SepiatEndpoint = require('./backend/generate/sepia');
+const ProfileEndpoint = require('./backend/generate/profile');
 
 /* Functions */
 function status(type, msg, res) {
@@ -84,6 +85,15 @@ app.get('/image/sepia', async (req, res) => {
     let check = await isImage(req.body.url);
     if(!check) return status(false, 'The Image Isnt Of The PNG Type.');
     let result = await SepiatEndpoint(req.body.url);
+
+    return status(result[0], result[1], res);
+});
+
+app.get('/image/profile', async (req, res) => {
+    if(!req.body.url) return status(false, 'No URL Provided', res);
+    let check = await isImage(req.body.url);
+    if(!check) return status(false, 'The Image Isnt Of The PNG Type.');
+    let result = await ProfileEndpoint(req.body.url);
 
     return status(result[0], result[1], res);
 });
