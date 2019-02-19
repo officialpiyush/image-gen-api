@@ -11,40 +11,12 @@ app.use(bodyParser.json());
 
 /* Import All Endpoints */
 /* TODO- V2 Class Based Endpoints */ // eslint-disable-line
-/** // eslint-disable-line
- * @name AchievementEndpoint // eslint-disable-line
- * @returns {Promise} // eslint-disable-line
- */ // eslint-disable-line
 const AchievementEndpoint = require('./backend/generate/achievement');
-/** // eslint-disable-line 
- * @name ApprovedEndpoint// eslint-disable-line
- * @returns {Promise}// eslint-disable-line
- */
 const ApprovedEndpoint = require('./backend/generate/approved');
-/** // eslint-disable-line
- * @name ContrastEndpoint // eslint-disable-line
- * @returns {Promise} // eslint-disable-line
- */
 const ContrastEndpoint = require('./backend/generate/contrast');
-/** // eslint-disable-line
- * @name FrameEndpoint // eslint-disable-line
- * @returns {Promise} // eslint-disable-line
- */ // eslint-disable-line
 const FrameEndpoint = require('./backend/generate/frame');
-/**
-* @name InvertEndpoint
-* @returns {Promise}
-*/
 const InvertEndpoint = require('./backend/generate/invert');
-/** // eslint-disable-line
- * @name SepiaEndpoint // eslint-disable-line
- * @returns {Promise} // eslint-disable-line
- */ // eslint-disable-line
 const SepiaEndpoint = require('./backend/generate/sepia');
-/** // eslint-disable-line
- * @name RejectedEndpoint // eslint-disable-line
- * @returns {Promise} // eslint-disable-line
- */ // eslint-disable-line
 const RejectedEndpoint = require('./backend/generate/rejected');
 
 
