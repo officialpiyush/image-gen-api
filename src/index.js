@@ -17,6 +17,7 @@ const ContrastEndpoint = require('./backend/generate/contrast');
 const FrameEndpoint = require('./backend/generate/frame');
 const InvertEndpoint = require('./backend/generate/invert');
 const SepiatEndpoint = require('./backend/generate/sepia');
+const RejectedEndpoint = require('./backend/generate/rejected');
 
 /* Functions */
 function status(type, msg, res) {
@@ -87,6 +88,15 @@ app.get('/image/sepia', async (req, res) => {
 
   return status(result[0], result[1], res);
 });
+
+app.get('/image/rejected', async(req, res) => {
+  if(!req.body.url) return status(false, 'No URL Provided', res);
+  let check = await isImage(req.body.url);
+  if(!check) return status(false, 'The Image Isnt Of The PNG Type.');
+  let result = await RejectedEndpoint(req.body.url);
+
+  return status(result[0], result[1], res);
+  });
 
 app.listen(process.env.port || '3000', () => { // eslint-disable-line
   console.log('[CONNECTION] Sucessfully Connected.');
