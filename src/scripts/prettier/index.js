@@ -15,7 +15,7 @@ const files = glob.sync('**/*.js', {
   ignore: '**/node_modules/**',
 });
 
-if (!files.length) return null;
+
 
 files.forEach(file => {
   const options = prettier.resolveConfig.sync(file, {
