@@ -1,2 +1,4 @@
 node_modules/*
 Test/*
+yarn.*
+yarn-error.log
