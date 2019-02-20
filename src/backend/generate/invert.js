@@ -13,11 +13,19 @@ module.exports = async function InvertEndpoint(image) {
     ctx.drawImage(data, 0, 0);
     invert(ctx, 0, 0, data.width, data.height);
     const resimage = canvas.toBuffer();
-    if (Buffer.byteLength(resimage) > 8e6)
-      return [false, 'Resulting image was above 8 MB'];
+    if (Buffer.byteLength(resimage) > 8e6)return [
+        false,
+         'Resulting image was above 8 MB'
+        ];
 
-    return [true, resimage];
+    return [
+      true,
+       resimage
+      ];
   } catch (err) {
-    return [false, err.message];
+    return [
+      false,
+       err.message
+      ];
   }
 };

@@ -1,3 +1,4 @@
+/* eslint-disable */
 module.exports = class CanvasUtil {
   static shortenText(ctx, text, maxWidth) {
     let shorten = false;

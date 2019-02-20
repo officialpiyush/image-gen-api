@@ -5,7 +5,8 @@
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "ecmaVersion": 2017
+        "ecmaVersion": 2017,
+        "sourceType": "module"
     },
     "rules": {
         "accessor-pairs": "error",
@@ -65,7 +66,6 @@
         "func-call-spacing": "error",
         "func-name-matching": "error",
         "func-names": "off",
-        "function-paren-newline": "error",
         "generator-star-spacing": "error",
         "global-require": "off",
         "guard-for-in": "off",

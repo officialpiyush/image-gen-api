@@ -10,7 +10,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json()); // eslint-disable-line
 
 /* Import All Endpoints */
-/* TODO- V2 Class Based Endpoints */ const AchievementEndpoint = require('./backend/generate/achievement');
+/* TODO- V2 Class Based Endpoints */ // eslint-disable-line
+const AchievementEndpoint = require('./backend/generate/achievement');
 const ApprovedEndpoint = require('./backend/generate/approved');
 const ContrastEndpoint = require('./backend/generate/contrast');
 const FrameEndpoint = require('./backend/generate/frame');
@@ -87,7 +88,6 @@ app.get('/image/sepia', async (req, res) => {
   return status(result[0], result[1], res);
 });
 
-app.listen(process.env.port || '3000', () => {
-  //eslint-disable-line
+app.listen(process.env.port || '3000', () => { // eslint-disable-line
   console.log('[CONNECTION] Sucessfully Connected.');
 });

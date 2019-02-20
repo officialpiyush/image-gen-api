@@ -3,7 +3,7 @@ const {createCanvas, loadImage, registerFont} = require('canvas');
 const path = require('path');
 const {shortenText} = require('../util/CanvasUtil');
 registerFont(path.join(__dirname, '..', 'assets', 'fonts', 'Minecraftia.ttf'), {
-  family: 'Minecraftia',
+  family: 'Minecraftia'
 });
 
 /* Export Function */
