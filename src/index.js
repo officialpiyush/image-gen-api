@@ -1,3 +1,9 @@
+/**
+ * @author Piyush Bhangale <bhangalepiyush@gmail.com>
+ * @license MIT
+ * @version 0.0.2
+ */
+
 /* Import Packages*/
 const express = require('express');
 const app = express();
@@ -13,21 +19,68 @@ app.use(bodyParser.json()); // eslint-disable-line
 
 /* Import All Endpoints */
 /* TODO- V2 Class Based Endpoints */ // eslint-disable-line
+
+/**
+ * @name AchievementEndpoint
+ * @returns {Promise}
+ */
 const AchievementEndpoint = require('./backend/generate/achievement');
+
+/**
+ * @name ApprovedEndpoint
+ * @returns {Promise}
+ */
 const ApprovedEndpoint = require('./backend/generate/approved');
+
+/**
+ * @name ContrastEndpoint
+ * @returns {Promise}
+ */
 const ContrastEndpoint = require('./backend/generate/contrast');
+
+/**
+ * @name FrameEndpoint
+ * @returns {Promise}
+ */
 const FrameEndpoint = require('./backend/generate/frame');
+
+/**
+ * @name InvertEndpoint
+ * @returns {Promise}
+ */
 const InvertEndpoint = require('./backend/generate/invert');
+
+/**
+ * @name SepiatEndpoint
+ * @returns {Promise}
+ */
 const SepiatEndpoint = require('./backend/generate/sepia');
+
+/**
+ * @name RejectedEndpoint
+ * @returns {Promise}
+ */
 const RejectedEndpoint = require('./backend/generate/rejected');
 
 /* Functions */
+
+/**
+ * @param {Boolean} type - Boolean Weather True or false
+ * @param {String} msg -  The Message Parameter String
+ * @param {Object} res - The Express res object
+ * @returns {Object} - Returns JSON Object
+ */
 function status(type, msg, res) {
   if (type === false) res.status(400);
 
   return res.json({sucess: type, message: msg});
 }
 
+/**
+ * 
+ * @param {String} link - The Link Of The Image to Validate
+ * @returns {Boolean} - Either True Or False
+ */
 function isImage(link) {
   let type = link.substring(link.lastIndexOf('.') + 1);
   let isPNG = /(png)/gi.test(type); //eslint-disable-line
