@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const logger = require('./backend/util/Logger');
+const Logger = new logger();
 
 /* Initialize Middleware*/
 app.use(cors());
@@ -99,5 +101,5 @@ app.get('/image/rejected', async(req, res) => {
   });
 
 app.listen(process.env.port || '3000', () => { // eslint-disable-line
-  console.log('[CONNECTION] Sucessfully Connected.');
+  Logger.consuc();
 });

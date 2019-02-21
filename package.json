@@ -28,6 +28,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "canvas": "^2.3.1",
+    "chalk": "^2.4.2",
     "cors": "^2.8.5",
     "discord.js": "discordjs/discord.js",
     "express": "^4.16.4",
