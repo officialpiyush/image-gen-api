@@ -17,6 +17,10 @@
 </a>
 <br>
 <a href="https://github.com/ionadev/image-gen-api">
+<img src="https://img.shields.io/codacy/grade/65d316633e8f403795058b2deef6ffb5.svg?style=for-the-badge">
+</a>
+<br>
+<a href="https://github.com/ionadev/image-gen-api">
 <img src="https://img.shields.io/github/languages/top/ionadev/image-gen-api.svg?style=for-the-badge">
 </a>
 <a href="https://github.com/ionadev/image-gen-api/issues">
@@ -24,9 +28,6 @@
 </a>
 <a href="https://github.com/ionadev/image-gen-api/pulls">
 <img src="https://img.shields.io/github/issues-pr/ionadev/image-gen-api.svg?style=for-the-badge">
-</a>
-<a href="https://github.com/ionadev/image-gen-api">
-<img src="https://img.shields.io/codacy/grade/65d316633e8f403795058b2deef6ffb5.svg?style=for-the-badge">
 </a>
 
 </div>
