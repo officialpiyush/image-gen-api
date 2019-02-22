@@ -25,6 +25,7 @@
 <a href="https://github.com/ionadev/image-gen-api/pulls">
 <img src="https://img.shields.io/github/issues-pr/ionadev/image-gen-api.svg?style=for-the-badge">
 </a>
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/65d316633e8f403795058b2deef6ffb5)](https://www.codacy.com/app/bhangalepiyush/image-gen-api?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ionadev/image-gen-api&amp;utm_campaign=Badge_Grade)
 
 </div>
 
