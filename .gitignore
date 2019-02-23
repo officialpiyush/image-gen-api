@@ -3,3 +3,5 @@ Test/*
 yarn.*
 yarn-error.log
 out/*
+package-lock.json
+src/backend/generate/Discord
