@@ -5,6 +5,9 @@
   <br>
   <br>
   
+   <a href="https://heroku.com/deploy?template=https://github.com/ionadev/image-gen-api">
+    <img src="https://img.shields.io/badge/deploy_to-heroku-997FBC.svg?style=for-the-badge">
+  </a>
   <a href="https://discord.gg/XwdCXMF">
     <img src="https://img.shields.io/discord/543812119397924886.svg?style=for-the-badge&colorB=7289DA" alt="Support">
   </a>
