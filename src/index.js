@@ -62,6 +62,11 @@ const SepiatEndpoint = require('./backend/generate/sepia');
  */
 const RejectedEndpoint = require('./backend/generate/rejected');
 
+/**
+ * @name BeLikeBillEndpoint
+ * @returns {Promise}
+ */
+const BeLikeBillEndpoint = require("./backend/generate/be-like-bill");
 /* Functions */
 
 /**
@@ -151,6 +156,14 @@ app.get('/image/rejected', async(req, res) => {
   let result = await RejectedEndpoint(req.body.url);
 
   return status(result[0], result[1], res);
+  });
+
+  app.get("/image/be-like-bill",async(req,res) => {
+    if(!req.body.text) return status(false, 'No Name Provied', res);
+    let so = await BeLikeBillEndpoint(req.body.text);
+    if(!so) return status(false, "The Name Was Greater Than 20 Charachters", res);
+
+    return status(true,so,res);
   });
 
 app.listen(process.env.PORT || '3000', () => { // eslint-disable-line
