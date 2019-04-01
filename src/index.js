@@ -67,6 +67,12 @@ const RejectedEndpoint = require('./backend/generate/rejected');
  * @returns {Promise}
  */
 const BeLikeBillEndpoint = require("./backend/generate/be-like-bill");
+
+/**
+ * @name CircleEndpoint
+ * @returns {Array}
+ */
+const CircleEndpoint = require("./backend/generate/circle");
 /* Functions */
 
 /**
@@ -107,7 +113,7 @@ app.get('/image/achievement', async (req, res) => {
 app.get('/image/approved', async (req, res) => {
   if (!req.body.url) return status(false, 'No URL Provided', res);
   let check = await isImage(req.body.url);
-  if (!check) return status(false, 'The Image Isnt Of The PNG Type.');
+  if (!check) return status(false, 'The Image Isnt Of The PNG Type.', res);
   let result = await ApprovedEndpoint(req.body.url);
 
   return status(result[0], result[1], res);
@@ -116,7 +122,7 @@ app.get('/image/approved', async (req, res) => {
 app.get('/image/contrast', async (req, res) => {
   if (!req.body.url) return status(false, 'No URL Provided', res);
   let check = await isImage(req.body.url);
-  if (!check) return status(false, 'The Image Isnt Of The PNG Type.');
+  if (!check) return status(false, 'The Image Isnt Of The PNG Type.', res);
   let result = await ContrastEndpoint(req.body.url);
 
   return status(result[0], result[1], res);
@@ -125,7 +131,7 @@ app.get('/image/contrast', async (req, res) => {
 app.get('/image/frame', async (req, res) => {
   if (!req.body.url) return status(false, 'No URL Provided', res);
   let check = await isImage(req.body.url);
-  if (!check) return status(false, 'The Image Isnt Of The PNG Type.');
+  if (!check) return status(false, 'The Image Isnt Of The PNG Type.', res);
   let result = await FrameEndpoint(req.body.url);
 
   return status(result[0], result[1], res);
@@ -134,7 +140,7 @@ app.get('/image/frame', async (req, res) => {
 app.get('/image/invert', async (req, res) => {
   if (!req.body.url) return status(false, 'No URL Provided', res);
   let check = await isImage(req.body.url);
-  if (!check) return status(false, 'The Image Isnt Of The PNG Type.');
+  if (!check) return status(false, 'The Image Isnt Of The PNG Type.', res);
   let result = await InvertEndpoint(req.body.url);
 
   return status(result[0], result[1], res);
@@ -143,7 +149,7 @@ app.get('/image/invert', async (req, res) => {
 app.get('/image/sepia', async (req, res) => {
   if (!req.body.url) return status(false, 'No URL Provided', res);
   let check = await isImage(req.body.url);
-  if (!check) return status(false, 'The Image Isnt Of The PNG Type.');
+  if (!check) return status(false, 'The Image Isnt Of The PNG Type.', res);
   let result = await SepiatEndpoint(req.body.url);
 
   return status(result[0], result[1], res);
@@ -152,7 +158,7 @@ app.get('/image/sepia', async (req, res) => {
 app.get('/image/rejected', async(req, res) => {
   if(!req.body.url) return status(false, 'No URL Provided', res);
   let check = await isImage(req.body.url);
-  if(!check) return status(false, 'The Image Isnt Of The PNG Type.');
+  if(!check) return status(false, 'The Image Isnt Of The PNG Type.', res);
   let result = await RejectedEndpoint(req.body.url);
 
   return status(result[0], result[1], res);
@@ -164,6 +170,15 @@ app.get('/image/rejected', async(req, res) => {
     if(!so) return status(false, "The Name Was Greater Than 20 Charachters", res);
 
     return status(true,so,res);
+  });
+
+  app.get("/image/circle" ,  async(req,res) => {
+    if(!req.body.url) return status(false, 'No URL Provided', res);
+    let check = await isImage(req.body.url);
+    if(!check) return status(false, 'The Image Isnt Of The PNG Type.', res);
+    let result = await CircleEndpoint(req.body.url);
+
+    return(result[0], result[1], res);
   });
 
 app.listen(process.env.PORT || '3000', () => { // eslint-disable-line
